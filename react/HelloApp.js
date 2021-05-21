@@ -1,5 +1,6 @@
 import React from 'react';
 import { useProduct, useProductDispatch } from 'vtex.product-context';
+import styles from './styles.css';
 
 const HelloApp = () => {
   const { product } = useProduct();
@@ -16,11 +17,18 @@ const HelloApp = () => {
 
   return (
     <div>
-      <h1> Nombre: {product.productName} </h1>
+
+      <h1 className={styles.productName}>
+        Nombre: {product.productName}
+      </h1>
+
       <p> Marca: {product.brand} </p>
       <p> Descripción: {product.description} </p>
 
-      <button onClick={handleClick}>
+      <button
+        onClick={handleClick}
+        className="white br3 bn w5 pv4 ph3 bg-action-primary"
+      >
         GO!
       </button>
     </div>
